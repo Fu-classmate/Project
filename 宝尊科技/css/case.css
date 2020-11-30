@@ -1,0 +1,533 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.beijin{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.banxin{
+    width: 80%;
+    height: 100%;
+    /* background-color: pink; */
+    margin: 0 auto;
+}
+
+/* 电梯导航栏 */
+.ttr{
+    width: 50px;
+    height: 50px;
+    background-color:#FE7600;
+    position: fixed;
+    right: 55px;
+    top: 610px;
+    display: none;
+    border-radius: 5px;
+}
+
+/* 下拉框 */
+.top_Navigation .fow{
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border-top: 0px solid transparent;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid #ffffff;
+    position: relative;
+    top: -6px;
+    right: -42px;
+}
+
+.top_Navigation .ul_xialakuang{
+    width: 100%;
+    height: 122px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    top: 10px;
+    right: 0px;
+    display: none;
+}
+
+.top_Navigation .ul_xialakuang .li_xialakuang{
+    /* box-sizing: border-box; */
+    width: 99px;
+    height: 36px;
+    line-height: 36px;
+}
+
+.top_Navigation .ul_xialakuang .li_xialakuang:hover{
+    background-color: #fff;
+}
+
+.top_Navigation .ul_xialakuang .li_xialakuang a{
+    display: block;
+    color: #000000;
+    font-size: 14px;
+    height: 36px;
+    line-height: 30px;
+}
+
+.top_Navigation .ul_xialakuang .li_xialakuang a:hover{
+    color: red;
+    background-color: #fff;
+}
+
+.ttr:hover{
+    opacity: 0.2;
+    transition: all 0.5s;
+}
+
+  /* 板块一 */
+
+.top_beijin{
+    width:100%;
+    height: 500px;
+    background-image: url('../images/images-case/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.top_logo{
+    float: left;
+    width: 200px;
+    height: 75px;
+    margin:20px 20px;
+}
+
+.top_logo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.top_Navigation{
+    width: 676px;
+    height: 40px;
+    margin:26px 0;
+    float: right;
+}
+
+.top_Navigation ul{
+    float: left;
+}
+
+.top_Navigation ul li{
+    float: left;
+    width: 100px;
+    height: 40px;
+    margin: 0 1px;
+}
+
+.top_Navigation ul li a{
+    display: block;
+    width: 80px;
+    height: 40px;
+    margin:0 10px;
+    text-align: center;
+    line-height: 40px;
+    color: #ffffff;
+    font-size :16px;
+}
+
+.top_Navigation ul .top_li{
+    background-color: #FE7600;
+    border-radius: 5px;
+}
+
+.top_Navigation ul li:hover{
+    background-color: #FE7600;
+    border-radius: 5px;
+}
+
+
+/* 板块二 */
+.main{
+    width: 100%;
+    height: 40px;
+    /* background-color: pink; */
+    padding: 30px 0;
+}
+
+.main .main_nav{
+    width: 100%;
+    text-align: center;
+    line-height: 36px;
+}
+
+.main .main_nav li{
+    float: left;
+    width: 96px;
+    height: 36px;
+    margin: 0 12px;
+    border-radius: 50px;
+}
+
+.main .main_nav li a{
+    color: #666666;
+}
+
+/* 给a添加类 */
+.main_a{
+    /* display: block; */
+    border-radius: 50px;
+    background-color: #FE7600;  
+    color:#ffffff;
+   /* animation: fade 0.5s ease ; */
+    /* class="main_a" */
+}
+.main_b {
+   background: #FE7600;
+   /* opacity: 0.1;
+   border-radius: 50px; */
+   
+}
+
+
+/* .tab_con{
+    width: 100%;
+} */
+
+
+
+.main_whole{
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    height: 1200px;
+    display: none;
+    margin-left: 1350px;
+    /* animation-name: Main;
+    animation-duration: 1.5s; */
+     /* 动画执行的次数  */
+     /* animation-iteration-count: 1; 
+    animation-fill-mode:forwards; 
+    animation-fill-mode: forwards; */
+}
+
+ /* @keyframes Main {
+    0%{
+        transform: translate(0,0);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translate(-1100px,0);
+        opacity: 1;
+    }
+} */
+
+.main_whole .main_div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.main_whole .main_div div{
+    margin: 4px 6px;
+}
+
+.main_whole .main_div div p{
+    width: 100%;
+    height: 24px;
+    margin: 10px 0;
+    text-align: center;
+    line-height: 24px; 
+    font-size: 14px; 
+}
+
+.main_whole .main_div>div a img:hover{
+    transform: scale(0.9);
+    transition:all 0.5s;
+}
+
+.main_whole .main_div>div a:first-child{
+    display: block;
+}
+
+.main_whole .main_div>div a:last-child{
+    display: inline-block;
+    color: #666666;
+}
+
+.main_whole .main_bottom{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.main_whole .main_bottom>span{
+    padding: 12px;
+}
+
+.red{
+    color: red;
+}
+
+
+/* 第三部分 */
+
+.beijin_input{
+    background-color: #000000;
+    height: 618px;
+	overflow: hidden;
+}
+
+.bottom_div{
+    width: 509px;
+    float: left;
+    color: #ffffff;
+    margin-top: 80px;
+    margin-left: 1200px;
+     /* animation-name: bottom;
+    animation-duration: 1.5s; */
+     /* 动画执行的次数  */
+     /* animation-iteration-count: 1; 
+    animation-fill-mode:forwards;
+    animation-fill-mode: forwards; */
+}
+
+/* @keyframes bottom {
+    0%{
+        transform: translate(0,0);
+        opacity: 0.3;
+    }
+    100%{
+        transform: translate(-1200px,0);
+        opacity: 1;
+    }
+} */
+
+.bottom_div h1{    
+    font-size: 30px;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 5px;
+    padding-bottom: 30px;
+}
+
+.bottom_div .span_wer{
+    display: block;
+    font-size: 14px;
+    height: 48px;
+    line-height: 24px;
+    margin-left: 5px;
+}
+
+.bottom_div .hezi{
+    color: #C6C6C6;
+    margin-top: 50px;
+    float: left;
+    /* line-height: 60px */
+}
+
+.bottom_div .hezi .dianzi{
+    width: 509px;
+    height: 60px;
+    font-size: 14px;
+}
+
+.bottom_div .hezi .dianzi p{
+    margin:14px 0;
+}
+
+.bottom_div .hezi .dianhua{
+    width: 509px;
+    height: 60px;
+    font-size: 14px;
+}
+
+.bottom_div .hezi .dianhua p{
+    margin:14px 0;
+}
+
+.bottom_div .hezi .dizhi{
+    width: 509px;
+    height: 60px;
+    font-size: 14px;
+}
+
+.bottom_div .hezi .dizhi p{
+    margin:14px 0;
+}
+
+.bottom_div .hezi .dianzi img{
+    float: left;
+    margin: -2px 16px 20px 5px
+}
+
+.bottom_div .hezi .dianhua img{
+    float: left;
+    margin:-6px 16px 17px 5px;;
+}
+
+.bottom_div .hezi .dizhi img{
+    float: left;
+    margin:-6px 16px 14px 5px;
+}
+
+.biaodan_hezi{
+    float: left;
+    /* height: 360px; */
+    margin-top: 110px;
+    margin-left: 1400px;
+	
+     /* animation-name: biaodan;
+    animation-duration: 1.5s; */
+     /* 动画执行的次数  */
+     /* animation-iteration-count: 1; 
+    animation-fill-mode:forwards; */
+}
+
+/* @keyframes biaodan {
+    0%{
+    transform: translate(0,0);
+    opacity: 0.3;
+    }
+    100%{
+    transform: translate(-650px,0);
+    opacity: 1;
+    }
+} */
+
+
+.biaodan_hezi .biaodan_div1{
+    width: 660px;
+    padding: 16px 0;
+    /* float: left; */
+}
+
+.biaodan_hezi .biaodan_div1 .span1{
+    display: inline-block;
+    color: #C6C6C6;
+    font-size: 16px;
+    font-weight: 900;
+    width: 34px;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 10px 0 150px;
+}
+
+.biaodan_hezi .biaodan_div1 input{
+    width: 427px; 
+    height: 36px;
+    border-radius: 5px;
+    background-color: #000000;
+    border: 1px solid #DADADA;
+}
+
+.biaodan_hezi .biaodan_div1 span{
+    color: red;
+}
+
+.biaodan_hezi .biaodan_div2{
+    width: 660px;
+    padding: 16px 0;
+    /* float: left; */
+}
+
+.biaodan_hezi .biaodan_div2 .span2{
+    display: inline-block;
+    color: #C6C6C6;
+    font-size: 16px;
+    font-weight: 900;
+    width: 34px;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 10px 0 150px;
+}
+
+.biaodan_hezi .biaodan_div2 input{
+    width: 427px; 
+    height: 36px;
+    border-radius: 5px;
+    background-color: #000000;
+    border: 1px solid #DADADA;
+}
+
+.biaodan_hezi .biaodan_div2 span{
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    color: red;
+}
+
+.biaodan_hezi .biaodan_div3{
+    width: 660px;
+    padding: 16px 0;
+    /* float: left; */
+}
+
+.biaodan_hezi .biaodan_div3 .span3{
+    display: inline-block;
+    color: #C6C6C6;
+    font-size: 16px;
+    font-weight: 900;
+    width: 34px;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 10px 0 150px;
+}
+
+.biaodan_hezi .biaodan_div3 input{
+    width: 427px; 
+    height: 102px;
+    border-radius: 5px;
+    background-color: #000000;
+    border: 1px solid #DADADA;
+}
+
+.biaodan_hezi .biaodan_div3 span{
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    color: red;
+}
+
+.biaodan_hezi .tijiao{
+    margin: 10px 0 0 200px;
+}
+
+.biaodan_hezi .tijiao input{
+    width: 208px;
+    height: 46px;
+    background-color: #FFAD2B;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #FFAD2B;
+}
+
+.spanyan{
+    display: block;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    opacity: 0;
+    color:red;
+}
+
+/* 最后一个 */
+.disi{
+    height: 74px;
+    background-color: #F2F3F5;
+}
+
+.ccc{
+    height: 54px;
+    padding: 10px 0;
+    text-align: center;
+    color: #666666;
+}
+
+.ccc a{
+    width: 100%;
+    display: block;
+    color: #666666;
+    font-size: 14px;
+    line-height: 27px;
+}

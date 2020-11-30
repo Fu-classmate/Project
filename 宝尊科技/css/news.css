@@ -1,0 +1,424 @@
+body{
+height: 1100px;
+
+background-color: #010C2B;
+}
+
+
+
+.banximn{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+.nav {
+    height: 500px; 
+background-image: url('../images/images-news/bg.jpg');
+background-repeat: no-repeat;
+background-size: 120% 100%;
+/* 调背景图的尺寸 */
+background-position: -150px 0;
+/* 调背景图的位置 */
+
+
+   
+}
+
+.nav .logo1 img{
+    height: 75px;
+    width: 220px;
+    position: absolute;
+    left: 200px;
+    top: 20px;
+}
+
+.nav  .topNav>.vertical>span{
+    /* display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%; */
+   
+    
+}
+ .topNav ul li>a {
+     font-size: 16px;
+     
+     color: #ffffff;
+   
+ }
+ .nav .topNav ul li>a:hover {
+	background-color:  #FE7600 !important;
+}
+
+
+
+
+.nav .topNav>ul>li:nth-child(3) {
+    padding-bottom: 8px; 
+  
+ }
+ 
+ .nav .topNav>ul>li:nth-child(3) .li_one {
+   display: none;
+ }
+ 
+ .nav .topNav>ul>li:nth-child(3) .li_one li {
+     float: none;
+
+     height: 33.33%;
+ }
+ 
+ .nav .topNav>ul>li:nth-child(3) .li_one li:hover {
+
+  color:#FD7D10 ;
+ }
+ 
+ .nav .topNav>ul>li:nth-child(3) .li_one li a{
+     z-index: 2;
+     color: black;
+     background-color: #ffffff;
+ }
+ 
+
+.nav  .topNav>ul{
+
+
+    float: left;
+
+
+ 
+}
+
+ .nav .topNav li>a{
+    text-align: center;
+    line-height: 40px;
+
+
+   width: 100px;
+   height: 40px;
+    margin-right:-30px ;
+   display: inline-block;
+   border-radius: 5px;
+} 
+
+
+ .nav .topNav>ul{
+    text-align: center;
+    line-height: 40px;
+
+    
+    padding: 0 18px; 
+    
+    position: relative;
+    left: 710px;
+    top: 30px;
+   
+    
+   display: block;
+}
+.nav .topNav>ul>li{
+    text-align: center;
+    /* line-height: 40px; */
+
+    
+    padding: 0 15px; 
+     
+    position: relative;
+    left: -48px; 
+    top: 3px;
+   
+    
+   display: block;
+} 
+
+
+.news{
+width: 80%;
+}
+
+
+.news  .newsTime>ul>li>a:hover{
+color: #FD7D10;
+
+}
+
+
+.news  .newsTime ul {
+    display: block;
+   
+
+     line-height: 116px;
+    
+}
+
+.news  .newsTime ul li{
+    /* display: block  !important; */
+    float: none;
+    /* 清楚浮动  清楚所有浮动 */
+    
+   
+}
+
+.news  .newsTime li a {
+  
+
+    color: #A9A9A9;
+    position: relative;
+ 
+    top: 18px;
+    left: 167px;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    /* 主要 */
+}
+
+.news .circular {
+    float: left;
+}
+
+.news .circular ul {
+    position: absolute;
+   
+}
+
+.news .circular li {
+/*   
+    line-height: 20px;
+    float: none;
+    margin: 94px 0;
+    width: 22px;
+    height: 22px;
+    background-color: #DADADA;
+    border-radius: 50%;
+    position: relative;
+     top:469px;
+    left: 272px; */
+  
+}
+
+
+.news .circular>.circular2 {
+    background-color: #DADADA;
+    border: 1px solid #DADADA;
+    height: 421px;
+    width: 1px;
+    position: relative;
+    top: -410px;
+    left: 281px;
+}
+
+ .newsBox {
+   
+}
+
+
+.news_dynamic .news_div>.newsLink>a{
+    color: #FFFFFF;
+    /* height: 99px; */
+    line-height: 96px;
+    font-size: 22px;
+    position: relative;
+    top: -435px;
+    left: 300px;
+   display: inline;
+}
+.news_dynamic .news_div>.newsLink>a:hover {
+ /* color:  #FE7600 !important; */
+color: #FE7600 !important;
+/* background-color:  transparent; */
+/* 隐藏全部的 :hover */
+   /* !important   层级拉的最高 */
+}
+
+.news_dynamic .news_div .newsLink>p{
+    color: #737373;
+    /* line-height: 20px; */
+    font-size: 14px;
+    position: relative;
+    top: -459px;
+    left: 299px;
+    
+    font-family: 微软雅黑;
+  
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+}
+
+
+.footer {
+   line-height: 50px;
+width: 80%;
+   
+   position: relative;
+   top: -229px;
+   left: 188px;
+}
+
+.footer .contact {
+color: #FFFFFF;
+font-size: 30px;
+line-height: 14px;
+text-align: left;
+
+
+}
+
+.footer .contact1 {
+    color: #FFFFFF;
+    line-height: 27px;
+    font-size: 16px;
+}
+
+.contact_div {
+color: #C6C6C6;
+line-height: 30px;
+
+
+}
+
+
+
+.contact_div .Front{
+    font-size: 16px;
+    line-height: 30px;
+    padding-left: 60px;
+    }
+
+    .contact_div .Front>img {
+        text-align: left;
+        position: absolute;
+        top: 182px;
+        left: 20px;
+    }
+
+    .contact_div .middle{
+        font-size: 16px;
+        line-height: 30px;
+        padding-left: 60px;
+    }
+
+    .contact_div .middle>img {
+
+        text-align: left;
+        position: absolute;
+        top: 269px;
+        left: 20px;
+    }
+
+
+    .contact_div .after{
+        font-size: 16px;
+        line-height: 30px;
+        padding-left: 60px;
+    }
+
+    
+    .contact_div .after>img {
+
+        text-align: left;
+        position: absolute;
+        top: 355px;
+        left: 20px;
+    }
+
+
+.inp {
+    position: absolute;
+}
+
+
+    .inp_div {
+   
+        line-height: 61px;
+        color: #C6C6C6;
+text-align: right;
+position: relative;
+top: -354px;
+right: -660px;
+
+    }
+
+
+
+.inp  .inp_Front {
+  
+}
+
+.inp  .inp_Front>label {
+font-size: 20px;
+}
+
+.inp  .inp_Front>input {
+    
+height: 38px;
+    width: 410px;
+    background-color: #010C2B;
+    border: 1px solid #C6C6C6;
+   
+}
+
+.inp  .inp_middle {
+  
+}
+.inp  .inp_middle>label {
+    font-size: 20px;
+    }
+
+    .inp  .inp_middle>input {
+    
+        height: 38px;
+            width: 410px;
+            background-color: #010C2B;
+            border: 1px solid #C6C6C6;
+        }
+
+.inp  .inp_after{
+    
+  
+}
+
+
+.inp  .inp_after>label {
+    font-size: 20px;
+    }
+
+    .inp  .inp_after>input {
+    
+        height: 115px;
+            width: 410px;
+            background-color: #010C2B;
+            border: 1px solid #C6C6C6;
+            margin-top: 20px;
+        }
+
+
+        .inp  .butn {
+            width: 40%;
+            height: 50px;
+            background-color: #FFAD2B;
+            color: #FFFFFF;
+            border: 1px solid #FFAD2B;
+            position: relative;
+            top: 40px;
+            right: 228px;
+        }
+
+
+
+        .topFooter .bottom {
+            background-color: #f2f3f5;
+            padding: 30px 0;
+            color: #666666;
+        }
+        
+        .bottom p {
+            text-align: center;
+        }
+        
+
+

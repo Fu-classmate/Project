@@ -1,0 +1,165 @@
+/* 将标签默认的间距设为0 (把用得到的设置一下就可以了)*/
+/* 在这里中文逗号导致input的margin和padding没有重置*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+dl,
+dt,
+form,
+input,
+a {
+	font-size: 14px;
+	/* color: #999; */
+}
+
+/*去掉默认的小圆点,ol一般不用*/
+li {
+	list-style: none;
+	float: left;
+}
+
+/*去掉下划线*/
+a {
+	text-decoration: none;
+	display: block;
+}
+
+/*设置不倾斜*/
+em,
+i {
+	font-style: normal;
+}
+
+/*去掉在ie下图片做链接时的边框*/
+img {
+	display: block;
+}
+
+/* 让h标签继承body中的字体大小的设置*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+/*清除浮动，解决margin-top的塌陷*/
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	/*解决塌陷:此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。*/
+	display: table;
+}
+
+/*两边元素都不会浮动*/
+.clearfix:after {
+	clear: both;
+}
+
+/*清除浮动,兼容ie*/
+.clearfix {
+	zoom: 1;
+}
+
+/*清除浮动一般运用与,想让里面的元素依次排列的撑开外层.（浮动了的元素是无法撑开的）*/
+/*解决top塌陷，是避免子类元素的margin-top传递给了父级元素*/
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	margin: 20px auto;
+}
+
+header img {
+	width: 200px;
+	height: 75px;
+}
+
+header>ul {
+	width: 676px;
+}
+
+header ul li {
+	width: 100px;
+	margin-right: 2px;
+	border-radius: 5px;
+}
+
+
+
+header ul li:nth-child(3) {
+	position: relative;
+}
+
+header>ul>li>a {
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+}
+
+header>ul>li:hover {
+	background-color: rgba(254, 118, 0, 1);
+}
+
+header li>.border {
+	border: 5px solid transparent;
+	border-bottom: 5px solid #fff;
+	width: 10px;
+	height: 10px;
+	box-sizing: border-box;
+	position: absolute;
+	left: 50%;
+	top: 35px;
+	transform: translateX(-50%);
+	display: none;
+}
+
+header ul li .ul_box {
+	position: absolute;
+	top: 45px;
+	background-color: #FFFFFF;
+	border-radius: 8px;
+	z-index: -10;
+	display: none;
+}
+
+.ul_box li {
+	float: none;
+}
+
+.ul_box li:hover a{
+	color: rgb(254,118,0);
+}
+
+.ul_box li a {
+	color: #2B2B2B;
+	text-align: center;
+	line-height: 40px;
+}
+
+header>ul>li:hover .border {
+	display: block;
+}
+
+header>ul>li:hover .ul_box {
+	display: block;
+}
