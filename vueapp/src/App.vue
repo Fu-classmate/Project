@@ -1,15 +1,23 @@
 <template>
   <div id="app">
-    <router-view/>
+    <FooterGuide v-show='$route.meta.user'></FooterGuide>
+
+    <router-view />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import FooterGuide from './components/FooterGuide/FooterGuide.vue'
+
+  export default {
+    name: 'App',
+    components: {
+      FooterGuide,
+    }
+  }
 </script>
 
 <style lang="stylus">
-
+  @import "../static/css/reset.css"
+  @import "./common/stylus/mixins.styl"
 </style>
