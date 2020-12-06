@@ -1,0 +1,108 @@
+#app {
+  background-color: #f8f8f8;
+}
+html,
+body {
+  background-color: #f6f6f6;
+  height: 100%;
+}
+.right-box {
+  background-color: #fff;
+  margin-bottom: 0.6rem;
+  margin: 0;
+}
+.footer {
+  text-align: center;
+  padding: 0.1rem 0;
+  width: 100%;
+  background-color: #f6f6f6;
+}
+.footer p {
+  color: #bfbfc3;
+  padding: 0.06rem 0;
+}
+.solt-plate {
+  background-color: #fff;
+  margin-top: 0.72rem;
+}
+.solt-plate h3 {
+  font-size: 0.3rem;
+  font-weight: 700;
+  color: #333333;
+  padding: 0.2rem 0 0.2rem 0.3rem;
+  border-bottom: 0.02rem #f3f3f3 solid;
+}
+.solt-plate .solt-item {
+  padding: 0.2rem 0 0.2rem 0.3rem;
+  width: 6.9rem;
+  border-bottom: 0.02rem #f3f3f3 solid;
+}
+.solt-plate .solt-item ul {
+  color: #000;
+}
+.solt-plate .solt-item ul li {
+  width: 25%;
+  font-size: 0.21rem;
+  cursor: pointer;
+}
+.solt-plate .solt-item ul li i {
+  font-size: 0.24rem;
+}
+.solt-plate .solt-item ul li:last-child {
+  text-align: center;
+}
+.solt-plate .solt-item ul .active {
+  color: #42bd56;
+}
+.solt-plate .plate-item li {
+  float: none;
+  padding: 0.25rem 0;
+  border-bottom: 0.02rem #f3f3f3 solid;
+}
+.solt-plate .plate-item li div {
+  float: left;
+}
+.solt-plate .plate-item li .plate-img {
+  width: 2rem;
+  height: 1rem;
+  margin: 0 0.2rem;
+}
+.solt-plate .plate-item li .plate-img img {
+  width: 100%;
+}
+.solt-plate .plate-item li .plate-txt {
+  height: 1rem;
+  padding: 0.05rem 0;
+}
+.solt-plate .plate-item li .plate-txt p {
+  font-size: 0.21rem;
+  margin-bottom: 0.2rem;
+  box-sizing: border-box;
+}
+.solt-plate .plate-item li .plate-txt span {
+  color: #fff;
+  font-size: 0.16rem;
+  border-radius: 0.05rem;
+  padding: 0.08rem 0.15rem;
+  background-color: #42bd56;
+}
+.solt-plate .paging {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 0.2rem;
+}
+.solt-plate .paging i {
+  font-size: 0.3rem;
+  margin-right: 0.2rem;
+  color: #ccc;
+  cursor: pointer;
+}
+.solt-plate .paging i:last-child {
+  margin: 0 0 0 0.2rem;
+}
+.solt-plate .paging div {
+  font-size: 0.21rem;
+  padding-top: 0.03rem;
+  box-sizing: border-box;
+  color: #666;
+}

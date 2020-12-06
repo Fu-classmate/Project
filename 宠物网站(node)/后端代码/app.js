@@ -15,6 +15,6 @@ app.use(bodyParser.json())
 app.use(router)
 
 app.listen(3000,()=>{
-	console.log('启动成功')
+	console.log('启动成功 http://localhost:3000')
 })
 

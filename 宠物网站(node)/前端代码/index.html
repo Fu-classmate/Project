@@ -1,247 +1,226 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="./css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="./css/style.css" />
-		<link rel="stylesheet" type="text/css" href="./font/iconfont.css" />
-		<script src="./js/rem.js"></script>
-		<!--移动端  rem-->
-		<script src="./js/axios.js"></script> <!-- axios -->
-		<script src="js/template-web.js"></script> <!-- 模板 -->
 
-	</head>
-	<body>
-		<!-- 加载区域 -->
-		<div class="load">
-			<div class="load-box">
-				Loading
-				<span></span>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/common/reset.css" />
+	<link rel="stylesheet" type="text/css" href="./css/common/sidebar.css" />
+	<link rel="stylesheet" type="text/css" href="./css/index/style.css" />
+	<link rel="stylesheet" type="text/css" href="./font/iconfont.css" />
+
+	<!-- 引入框架和库 -->
+	<script src="./js/frame/rem.js"></script>
+	<!--移动端  rem-->
+	<script src="./js/frame/axios.js"></script> <!-- axios -->
+	<script src="./js/frame/template-web.js"></script> <!-- 模板 -->
+
+</head>
+
+<body>
+	<!-- 加载区域 -->
+	<div class="load">
+		<div class="load-box">
+			Loading
+			<span></span>
+		</div>
+	</div>
+
+
+	<div id="app">
+		<!-- 侧边栏 左侧盒子-->
+		<div class="left-box">
+			<ul>
+				<li><a href="index.html"><i class="iconfont icon-dianpu"></i>首页</a></li>
+				<li><a href="#"><i class="iconfont icon-59"></i>在线预约</a></li>
+				<li><a href="#"><i class="iconfont icon-zuoye"></i>宠物课堂</a></li>
+				<li><a href="#"><i class="iconfont icon-liuyan"></i>留言版</a></li>
+			</ul>
+		</div>
+
+		<!-- 轮播图大图展示 -->
+		<div class="rotation-bigImg">
+			<i class="iconfont icon-x"></i>
+			<div class="bigImg">
+				<img src="">
 			</div>
 		</div>
 
-		<div id="app">
-			<!-- 侧边栏 -->
-			<div class="left-box">
+
+		<!-- 右侧盒子 -->
+		<div class="right-box">
+
+			<!-- 头部工具栏 -->
+			<div class="head-top">
+				<div class="head">
+					<i class="iconfont icon-zhankai navBtn"></i>
+					<h3>宠物用品</h3>
+					<i class="iconfont icon-yonghu"></i>
+				</div>
+			</div>
+
+			<!-- 底部工具栏 -->
+			<div class="bottom">
 				<ul>
-					<li><a href="#"><i class="iconfont icon-dianpu"></i>首页</a></li>
-					<li><a href="#"><i class="iconfont icon-59"></i>在线预约</a></li>
-					<li><a href="#"><i class="iconfont icon-zuoye"></i>宠物课堂</a></li>
-					<li><a href="#"><i class="iconfont icon-liuyan"></i>留言版</a></li>
+					<li><a href="index.html"><i class="iconfont icon-shouye"></i></a></li>
+					<li><a href="#">在线预约</a></li>
+					<li><a href="#">宠物课堂</a></li>
+					<li><a href="#">我的</a></li>
 				</ul>
 			</div>
 
-			<div class="right-box">
-				<!-- 头部工具栏 -->
-				<div class="head-top">
-					<div class="head">
-						<i class="iconfont icon-zhankai navBtn"></i>
-						<h3>宠物用品</h3>
-						<i class="iconfont icon-yonghu"></i>
-					</div>
-				</div>
-
-				<!-- 底部工具栏 -->
-				<div class="bottom">
-					<ul>
-						<li><a href="#"><i class="iconfont icon-shouye"></i></a></li>
-						<li><a href="#">在线预约</a></li>
-						<li><a href="#">宠物课堂</a></li>
-						<li><a href="#">我的</a></li>
-					</ul>
-				</div>
-
-				<!-- 内容区域 -->
-				<!-- 搜索区域 -->
-				<div class="search">
-					<div class="search-input">
-						<i class="iconfont icon-sousuo"></i>
-						<span> 搜索您需要宠物相关服务 </span>
-					</div>
-				</div>
-
-				<!-- 轮播区域 -->
-				<div class="Rotation">
-					<ul class="R-item clearfix"></ul>
-				</div>
-
-				<!-- 栏目一 展示-->
-				<div class="content-one">
-					<h3>产品类型</h3>
-					<ul class="show-content clearfix"></ul>
-				</div>
-
-				<!--栏目二 轮播标题 -->
-				<div class="title">
-					<i class="iconfont icon-laba"></i>
-					<ul>
-						<li><a href="#"><b>· </b>在线咨询您有什么问题，或者需要什么帮助请立即咨询</a></li>
-						<li><a href="#"><b>· </b>在线咨询您有什么问题，或者需要什么帮助请立即咨询</a></li>
-					</ul>
-				</div>
-
-				<!-- 栏目三 图片展示 -->
-				<div class="show-img">
-					<div class="img-one">
-						<p>品质保障 专业用品</p>
-						<span>宠物用品</span>
-					</div>
-					<div class="img-two">
-						<ul>
-							<li>
-								<p>我的客户</p><span>巅峰时期</span>
-							</li>
-							<li>
-								<p>产品奖项</p><span>20项</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- 栏目四 背景图片展示 -->
-				<div class="show-bgc">
-					<div class="bgc-txt1">
-						<h3>不止天然&nbsp; | &nbsp;更宠天性</h3>
-						<img src="img/content12.webp">
-						<img src="img/content11.webp">
-					</div>
-					<div class="bgc-img">
-						<div class="img-left">
-							<img src="img/content4.webp">
-						</div>
-						<div class="img-right">
-							<img src="img/content6.webp">
-						</div>
-					</div>
-					<div class="bgc-txt2">
-						<span>爱宠要点</span>
-						<img src="img/content10.webp">
-					</div>
-					<div class="bgc-ul">
-						<ul class="clearfix">
-							<li>
-								<a href="#" class="clearfix">
-									<div style="background: url(./img/li-img11.webp) no-repeat;">
-										<img src="./img/li-img1.webp">
-									</div>
-									<div>
-										<h3>宠物饮食</h3>
-										<span>宠物的饮食和营养也越来越受大家的关注</span>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="clearfix">
-									<div style="background: url(./img/li-img22.webp) no-repeat;">
-										<img src="./img/li-img2.webp">
-									</div>
-									<div>
-										<h3>宠物护理</h3>
-										<span>让宠物的外观得到美化和保护，变得更健康和时尚</span>
-									</div>
-								</a>
-							</li>
-							<li>
-								<a href="#" class="clearfix">
-									<div style="background: url(./img/li-img33.webp) no-repeat;">
-										<img src="./img/li-img3.webp">
-									</div>
-									<div>
-										<h3>宠物医疗</h3>
-										<span>宠物的医疗和保养也越来越受大家关注</span>
-									</div>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- 栏目五 拖拽展示 -->
-				<div class="drag">
-					<div class="drag-h">
-						<h3>用品预约</h3>
-						<span><a href="#">查看全部</a></span>
-					</div>
-					<div class="drag-ul"></div> <!-- 模板渲染 -->
-				</div>
-
-				<!-- 栏目五 新闻展示 -->
-				<div class='new'>
-					<div class="drag-h">
-						<h3>新闻资讯</h3>
-						<span><a href="#">查看全部</a></span>
-					</div>
-					<ul class="new-ul">
-						<li>
-							<a href="#" class="clearfix">
-								<div class="new-txt">
-									<h3>带爱宠自驾返程，这份攻略请收好</h3>
-									<p>虽然疫情期间实在不建议大家出门，不过年关已过，总有不得不带着宠物们自驾返程的情况存在，返程途中我们铲屎官可以带口罩保护自己，那么对于我们的爱宠，我们可以为它们做点啥呢？出发前准备1.准备好相关证件，参考当地政策目前整个防疫的形势还是比较严格...</p>
-									<span>2020/10/09</span>
-								</div>
-								<div class="new-img">
-									<img src="img/content7.webp">
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="clearfix">
-								<div class="new-txt">
-									<h3>长骨常见简单骨折手术修复</h3>
-									<p>桡尺骨、胫腓骨骨折为临床常遇到的两大类骨折，对已经确诊骨折的患宠，首先应该确认单纯骨科问题or神行学问题，如果是神经问题属于神经问题or外周神经问题，在神经学检查良好的情况下考虑接骨术。
-										早期常用外固定夹板治疗，弊端非常明显，愈合延迟、畸形...</p>
-									<span>2020/10/09</span>
-								</div>
-								<div class="new-img">
-									<img src="img/content8.webp">
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="clearfix">
-								<div class="new-txt">
-									<h3>47例犬细小病毒治疗体会</h3>
-									<p>47例犬细小病毒病治疗体会　　犬细小病毒病是临床常见的传染病之一，感染发病急，病程短，对6月龄以下幼犬危害更大，国内报道死亡率约为。本病冬季发病较多，其次为初春或深秋，夏季发病较少。
-										小于3月龄的幼犬对本病为易感，死亡率也较高，可达77.8...</p>
-									<span>2020/10/09</span>
-								</div>
-								<div class="new-img">
-									<img src="img/content9.webp">
-								</div>
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<!-- 底部信息 -->
-				<div class="footer">
-					<p>©2020 版权所有</p>
-					<p>移动端</p>
+			<!-- 内容区域 -->
+			<!-- 搜索区域 -->
+			<div class="search">
+				<div class="search-input">
+					<i class="iconfont icon-sousuo"></i>
+					<span> 搜索您需要宠物相关服务 </span>
 				</div>
 			</div>
+
+			<!-- 轮播区域 -->
+			<div class="Rotation">
+				<ul class="R-item clearfix"></ul>
+			</div>
+
+			<!-- 栏目一 展示-->
+			<div class="content-one">
+				<h3>产品类型</h3>
+				<ul class="show-content clearfix"></ul>
+			</div>
+
+			<!--栏目二 轮播标题 -->
+			<div class="title">
+				<i class="iconfont icon-laba"></i>
+				<ul>
+					<li><a href="#"><b>· </b>在线咨询您有什么问题，或者需要什么帮助请立即咨询</a></li>
+					<li><a href="#"><b>· </b>在线咨询您有什么问题，或者需要什么帮助请立即咨询</a></li>
+				</ul>
+			</div>
+
+			<!-- 栏目三 图片展示 -->
+			<div class="show-img">
+				<div class="img-one">
+					<p>品质保障 专业用品</p>
+					<span>宠物用品</span>
+				</div>
+				<div class="img-two">
+					<ul>
+						<li>
+							<p>我的客户</p><span>巅峰时期</span>
+						</li>
+						<li>
+							<p>产品奖项</p><span>20项</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 栏目四 背景图片展示 -->
+			<div class="show-bgc">
+				<div class="bgc-txt1">
+					<h3>不止天然&nbsp; | &nbsp;更宠天性</h3>
+					<img src="./img/content12.webp">
+					<img src="./img/content11.webp">
+				</div>
+				<div class="bgc-img">
+					<div class="img-left">
+						<img src="./img/content4.webp">
+					</div>
+					<div class="img-right">
+						<img src="./img/content6.webp">
+					</div>
+				</div>
+				<div class="bgc-txt2">
+					<span>爱宠要点</span>
+					<img src="./img/content10.webp">
+				</div>
+				<div class="bgc-ul">
+					<ul class="clearfix">
+						<li>
+							<a href="#" class="clearfix">
+								<div style="background: url(./img/li-img11.webp) no-repeat;">
+									<img src="./img/li-img1.webp">
+								</div>
+								<div>
+									<h3>宠物饮食</h3>
+									<span>宠物的饮食和营养也越来越受大家的关注</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="clearfix">
+								<div style="background: url(./img/li-img22.webp) no-repeat;">
+									<img src="./img/li-img2.webp">
+								</div>
+								<div>
+									<h3>宠物护理</h3>
+									<span>让宠物的外观得到美化和保护，变得更健康和时尚</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="clearfix">
+								<div style="background: url(./img/li-img33.webp) no-repeat;">
+									<img src="./img/li-img3.webp">
+								</div>
+								<div>
+									<h3>宠物医疗</h3>
+									<span>宠物的医疗和保养也越来越受大家关注</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 栏目五 拖拽展示 -->
+			<div class="drag">
+				<div class="drag-h">
+					<h3>用品预约</h3>
+					<span><a href="#">查看全部</a></span>
+				</div>
+				<div class="drag-ul"></div> <!-- 模板渲染 -->
+			</div>
+
+			<!-- 栏目五 新闻展示 -->
+			<div class='new'>
+				<div class="drag-h">
+					<h3>新闻资讯</h3>
+					<span><a href="#">查看全部</a></span>
+				</div>
+				<ul class="new-ul">
+
+				</ul>
+			</div>
+
+			<!-- 底部信息 -->
+			<div class="footer">
+				<p>©2020 版权所有</p>
+				<p>移动端</p>
+			</div>
 		</div>
+	</div>
 
-		<!-- 模板区域 -->
-
-		<!-- 轮播模板 -->
-		<script type="text/html" id="R-item-tmp">
+	<!-- 模板区域 -->
+	<!-- 轮播模板 -->
+	<script type="text/html" id="R-item-tmp">
 			{{each data}}
-				<li><a href="#"><img src={{$value.Img}}></a></li>
+				<li><img src={{$value.Img}}></li>
+			{{/each}}
+	</script>
+
+	<!-- 展示模板 -->
+	<script type="text/html" id="show-content-tmp">
+			{{each data}}
+				<li><a href="./pages/content.html?id={{$value._id}}"><img src={{$value.Img}}><span>{{$value.content}}</span></a></li>
 			{{/each}}
 		</script>
 
-		<!-- 展示模板 -->
-		<script type="text/html" id="show-content-tmp">
-			{{each data}}
-				<li><a href="#"><img src={{$value.Img}}><span>{{$value.content}}</span></a></li>
-			{{/each}}
-		</script>
-
-		<!-- 预约模板 -->
-		<script type="text/html" id="drag-ul-tmp">
+	<!-- 预约模板 -->
+	<script type="text/html" id="drag-ul-tmp">
 			<ul class="clearfix">
 				{{each data}}
 					<li>
@@ -255,9 +234,9 @@
 				{{/each}}
 			</ul>
 		</script>
-		
-		<!-- 资讯模板 -->
-		<script type="text/html" id="new-ul-tmp">
+
+	<!-- 资讯模板 -->
+	<script type="text/html" id="new-ul-tmp">
 			{{each data}}
 				<li>
 					<a href="#" class="clearfix">
@@ -274,7 +253,10 @@
 			{{/each}}
 		</script>
 
-		<script src="./js/index.js"></script>
-		<script src="./js/Rotation.js"></script> <!-- 轮播图 -->
-	</body>
+	<!-- 引入外部文件 -->
+	<script src="./js/common/sidebar.js"></script> <!-- 侧边栏展开 -->
+	<script src="./js/common/myAxios.js"></script> <!-- 请求列表 -->
+	<script src="./js/index/index.js"></script> <!-- 首页 -->
+</body>
+
 </html>
