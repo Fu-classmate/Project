@@ -48,9 +48,6 @@ body {
 .solt-plate .solt-item ul li i {
   font-size: 0.24rem;
 }
-.solt-plate .solt-item ul li:last-child {
-  text-align: center;
-}
 .solt-plate .solt-item ul .active {
   color: #42bd56;
 }

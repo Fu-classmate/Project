@@ -80,29 +80,33 @@ window.onload = () => {
 
 	// 轮播图大图展示
 	function bigImg() {
-		let  Ritem = document.querySelectorAll('.R-item img')
+		let Ritem = document.querySelectorAll('.R-item img')
 		let rotationBox = document.querySelector('.rotation-bigImg')
 		let btn = document.querySelector('.rotation-bigImg i')
 		let bigBox = document.querySelector('.bigImg')
 		let bigImg = document.querySelector('.bigImg img')
+		let content = document.querySelector('.content-one')
 
 		let H = document.documentElement.clientHeight
-		bigBox.style.top = (H - 500)/102 + 'rem'
 
 		btn.onclick = () => {
 			rotationBox.style.display = 'none'
+			document.documentElement.style.overflow = 'auto'
 		}
 
 		rotationBox.onclick = () => {
 			rotationBox.style.display = 'none'
+			document.documentElement.style.overflow = 'auto'
 		}
 
-		Ritem.forEach((item,index) => {
-			item.onclick = () =>{
-				rotationBox.style.display = 'block'
-				bigImg.src = Ritem[index].src
-				document.documentElement.style.height = H + 'px'
+		Ritem.forEach((item, index) => {
+			item.onclick = () => {
+				bigBox.style.top = (H - 500) / 102 + 'rem'
 
+				rotationBox.style.display = 'block'
+
+				bigImg.src = Ritem[index].src
+				document.documentElement.style.overflow = 'hidden'
 			}
 		});
 	}
@@ -111,14 +115,34 @@ window.onload = () => {
 	function animate() {
 		let ld = document.querySelector('.load')
 		let app = document.querySelector('#app')
+		let lastname = sessionStorage.getItem('key');
 
-		setTimeout(() => {
+		if (lastname == null) {
+			ld.style.display = 'block'
+			
+			setTimeout(() => {
+				app.style.opacity = '1'
+			}, 1100)
+			setTimeout(() => {
+				ld.remove() //清除html标签
+				app.style.display = 'block'
+				sessionStorage.setItem('key', '2');
+			}, 1000)
+		}
+
+		if (lastname == 2) {
 			app.style.opacity = '1'
-		}, 1100)
-
-		setTimeout(() => {
 			ld.remove() //清除html标签
 			app.style.display = 'block'
-		}, 1000)
+		}
+
+		// setTimeout(() => {
+		// 			app.style.opacity = '1'
+		// 		}, 1100)
+		// 		setTimeout(() => {
+		// 			ld.remove() //清除html标签
+		// 			app.style.display = 'block'
+		// 			sessionStorage.setItem('key', '2');
+		// 		}, 1000)
 	}
 }

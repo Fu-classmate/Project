@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/Data', {
 const Type = new mongoose.Schema({
 	Img: String,
 	title: String,
+	Type:String,
 	content: String,
 	date: String
 })
@@ -17,7 +18,7 @@ const Type = new mongoose.Schema({
 // 创建表
 const TypeImg = mongoose.model('Types', Type)
 
-//创建日期
+// 创建日期
 // let d = new Date()
 // let dN = d.getFullYear()
 // let dY = d.getMonth() + 1
@@ -27,45 +28,43 @@ const TypeImg = mongoose.model('Types', Type)
 // let date = dN + '/' + dY + '/' + dR
 
 // TypeImg.create({
-// 		Img: 'http://m.qpic.cn/psc?/V53AP1BW44j2s44d0aOk1VcKKY36lp4E/45NBuzDIW489QBoVep5mcfC3JmW4BIrj8WeY.1IP7XnKCvru8Tz4icZOmCI5SIRXKMHcQASsGqWW9gzTHnkYv93AYc*j8HuWaWqggixRbog!/b&bo=YgBgAGIAYAADGTw!&rf=viewer_4',
+// 		Img: 'http://25443488.s61i.faiusr.com/4/AD0IoPmQDBAEGAAgqLyB-AUo2PDXdjBiOGA.png.webp',
 // 		title: '类型',
+// 		Type:'Dog-food',
 // 		content: '正品狗粮',
-// 		date: date,
-// 		price: ''
+// 		date: date
 // 	})
 // 	.then(res => console.log('添加成功'))
 // 	.catch(err => console.log('添加失败'))
 
 // TypeImg.create({
-// 		Img: 'http://m.qpic.cn/psc?/V53AP1BW44j2s44d0aOk1VcKKY36lp4E/45NBuzDIW489QBoVep5mcfC3JmW4BIrj8WeY.1IP7XmYblZImp0*E0hGWwPJd6SG3nbbY2r7vf5fVo0YSJRc8TCR0o9dqi9QcdijipH.LgI!/b&bo=aABZAGgAWQADGTw!&rf=viewer_4',
+// 		Img: 'http://25443488.s61i.faiusr.com/4/AD0IoPmQDBAEGAAgqbyB-AUoqtP5hwEwaDhZ!100x100.png.webp',
 // 		title: '类型',
+// 		Type:'medical',
 // 		content: '医疗用品',
-// 		date: date,
-// 		price: ''
+// 		date: date
 // 	})
 // 	.then(res => console.log('添加成功'))
 // 	.catch(err => console.log('添加失败'))
 
 // TypeImg.create({
-// 		Img: 'http://m.qpic.cn/psc?/V53AP1BW44j2s44d0aOk1VcKKY36lp4E/45NBuzDIW489QBoVep5mcfC3JmW4BIrj8WeY.1IP7XnQdRCOkBD.fKqBjpcZL0peRNofth3fv58yUj*S2QEE.vT0OfoPKrLitIcxlwVK5ck!/b&bo=WABlAFgAZQADGTw!&rf=viewer_4',
+// 		Img: 'http://25443488.s61i.faiusr.com/4/AD0IoPmQDBAEGAAgpbyB-AUo6br78AcwWDhl!100x100.png.webp',
 // 		title: '类型',
+// 		Type:'daily',
 // 		content: '日常用品',
-// 		date: date,
-// 		price: ''
+// 		date: date
 // 	})
 // 	.then(res => console.log('添加成功'))
 // 	.catch(err => console.log('添加失败'))
 
 // TypeImg.create({
-// 		Img: 'http://m.qpic.cn/psc?/V53AP1BW44j2s44d0aOk1VcKKY36lp4E/45NBuzDIW489QBoVep5mcfC3JmW4BIrj8WeY.1IP7XmRny58BU9fAmXOLJSW1ag3XSaH9QImv0YH2eafn8*e2dSMoDR1Oihp.jSkHwkkvso!/b&bo=WABlAFgAZQADGTw!&rf=viewer_4',
+// 		Img: 'http://25443488.s61i.faiusr.com/4/AD0IoPmQDBAEGAAgqLyB-AUo6J-3qwYwWDhl!100x100.png.webp',
 // 		title: '类型',
-// 		content: '训练狗粮',
-// 		date: date,
-// 		price: ''
+// 		Type:'daily',
+// 		content: '训练零食',
+// 		date: date
 // 	})
 // 	.then(res => console.log('添加成功'))
 // 	.catch(err => console.log('添加失败'))
-
-
 
 module.exports = TypeImg

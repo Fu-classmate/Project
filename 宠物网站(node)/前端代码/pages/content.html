@@ -31,7 +31,7 @@
       </ul>
     </div>
 
-    <div class="right-box">
+    <div class="right-box" style="margin-bottom: .6rem;">
       <!-- 头部工具栏 -->
       <div class="head-top">
         <div class="head">
@@ -54,7 +54,7 @@
       <!-- 内容区域 -->
       <!-- 排序板块 -->
       <div class="solt-plate">
-        <h3>训练零食</h3>
+        <h3>商品展示</h3>
         <div class="solt-item">
           <ul class="clearfix">
             <li class="active">
@@ -69,23 +69,11 @@
               <span>价格</span>
               <i class="iconfont icon-shangjiantou"></i>
             </li>
-            <li>
-              <span>筛选</span>
-              <i class="iconfont icon-shaixuan" style="font-size: .2rem;"></i>
-            </li>
           </ul>
         </div>
         <div class="plate-item">
-          <ul>
-            <li class="clearfix">
-              <div class="plate-img">
-                <img src="http://25443488.s61i.faiusr.com/2/AD0IoPmQDBACGAAghL2B-AUoxLaUnAcw7gU4-AI!450x450.jpg.webp">
-              </div>
-              <div class="plate-txt">
-                <p>猫零食猫咬咬胶鸡肉牛肉</p>
-                <span>立即预约</span>
-              </div>
-            </li>
+          <ul class="plate-ul"> <!--动态渲染-->
+            
           </ul>
         </div>
         <div class="paging clearfix">
@@ -107,9 +95,24 @@
     </div>
   </div>
 
+  <!-- 正品狗粮 -->
+  <script type="text/html" id="plate-ul-tmp">
+    {{each data}}
+      <li class="clearfix">
+        <div class="plate-img">
+          <img src={{$value.Img}}>
+        </div>
+        <div class="plate-txt">
+          <p>{{$value.heading}}</p>
+          <span>立即预约</span>
+        </div>
+      </li>
+    {{/each}}
+  </script>
+
   <!-- 引入外部文件 -->
   <script src="../js/common/sidebar.js"></script> <!-- 侧边栏展开 -->
-  <script src="../js/common/myAxios.js"></script> <!-- 请求列表 -->
+  <script src="../js/content/Cxios.js"></script> <!-- 请求列表 -->
   <script src="../js/content/content.js"></script> <!-- 首页 -->
 </body>
 

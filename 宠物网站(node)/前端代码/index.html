@@ -180,7 +180,7 @@
 			<div class="drag">
 				<div class="drag-h">
 					<h3>用品预约</h3>
-					<span><a href="#">查看全部</a></span>
+					<a href="./pages/content.html?title=all">查看全部</a>
 				</div>
 				<div class="drag-ul"></div> <!-- 模板渲染 -->
 			</div>
@@ -215,7 +215,7 @@
 	<!-- 展示模板 -->
 	<script type="text/html" id="show-content-tmp">
 			{{each data}}
-				<li><a href="./pages/content.html?id={{$value._id}}"><img src={{$value.Img}}><span>{{$value.content}}</span></a></li>
+				<li><a href="./pages/content.html?type={{$value.Type}}"><img src={{$value.Img}}><span>{{$value.content}}</span></a></li>
 			{{/each}}
 		</script>
 
@@ -226,7 +226,7 @@
 					<li>
 						<a href='#'>
 							<img src={{$value.Img}}>
-							<h3>{{$value.title}}</h3>
+							<h3>{{$value.heading}}</h3>
 							<p>{{$value.content}}</p>
 							<span>￥{{$value.price}}.00</span>
 						</a>
@@ -255,7 +255,7 @@
 
 	<!-- 引入外部文件 -->
 	<script src="./js/common/sidebar.js"></script> <!-- 侧边栏展开 -->
-	<script src="./js/common/myAxios.js"></script> <!-- 请求列表 -->
+	<script src="./js/index/Iaxios.js"></script> <!-- 请求列表 -->
 	<script src="./js/index/index.js"></script> <!-- 首页 -->
 </body>
 
