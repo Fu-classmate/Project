@@ -1,9 +1,6 @@
 <template>
-
-
    <div>
       <section class="search">
-       
          <HeaderTop title="搜索"></HeaderTop>
         <form class="search_form" action="#">
           <input type="search" name="search" placeholder="请输入商家或美食名称" class="search_input">
@@ -17,34 +14,15 @@
 import HeaderTop from "../../components/HeaderTop/HeaderTop";
 
 //引入封装好的api请求
-// import { reqCategorys,reqShops } from "../../api/index";
 export default {
-  data() {
-    return {};
-  },
-  created() {},
-  mounted() {
-    // reqCategorys().then((res) => {
-    //   console.log(res);
-    // });
-
-    // let params = { latitude: 40.10038, longitude: 116.36867 }
-    // reqShops(params).then(res=>{
-    //     console.log(res.data)
-    // })
-
-  },
-  methods: {},
   components: {
     HeaderTop,
   },
 };
 </script>
-
 <style scoped lang='stylus'>
 @import '../../common/stylus/mixins';
-
-section         
+section
   	&.search  //搜索
           width 100%
           .search_form
@@ -72,5 +50,5 @@ section
                 font-size 16px
                 color #fff
                 background-color #02a774
-       
+
 </style>

@@ -13,9 +13,13 @@ var svgCaptcha = require('svg-captcha')
 密码登陆
  */
 router.post('/login_pwd', function (req, res) {
+  console.log('xxxxx')
   const name = req.body.name
   const pwd = md5(req.body.pwd)
+  // console.log(name,pwd)
   const captcha = req.body.captcha.toLowerCase()
+ 
+
   console.log('/login_pwd', name, pwd, captcha, req.session)
 
   // 可以对用户名/密码格式进行检查, 如果非法, 返回提示信息
@@ -163,8 +167,6 @@ router.get('/position/:geohash', function (req, res) {
 获取首页分类列表
  */
 router.get('/index_category', function (req, res) {
-	
-	console.log(1)
   setTimeout(function () {
     const data = require('../data/index_category.json')
     res.send({code: 0, data})

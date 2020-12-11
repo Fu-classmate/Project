@@ -27,6 +27,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      '~~':resolve('src/components')
     }
   },
   module: {
@@ -64,8 +65,25 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+    //  {
+    //   test: /\.styl$/,
+    //   use: [
+    //     {
+    //       loader: "style-loader",
+    //     },
+    //     {
+    //       loader: "css-loader",
+    //     },
+    //     {
+    //       loader: "stylus-loader",
+    //     }
+    //   ]
+
+    //  }
     ]
+      
+   
   },
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue

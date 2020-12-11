@@ -1,48 +1,72 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Msite from '../pages/Msite/msite.vue'
-import Order from '../pages/Order/order.vue'
-import Profile from '../pages/Profile/profile.vue'
-import Search from '../pages/Search/search.vue'
-import Login from '../pages/Login/login.vue'
-
 Vue.use(Router)
-
 export default new Router({
-  routes: [
-    {
+  linkActiveClass: 'on', // 被选中的路由对应的标签上面会有一个类名叫on
+  mode: 'history',
+  routes: [{
       path: '/',
       redirect: '/msite'
     },
     {
       path: '/msite',
       name: 'msite',
-      component: Msite,
-      meta:{user:true}
-    },
-    {
-      path: '/order',
-      name: 'order',
-      component: Order,
-      meta:{user:true}
-    },
-    {
-      path: '/profile',
-      name: 'profile',
-      component: Profile,
-      meta:{user:true}
+      component: () => import('../pages/Msite/Msite.vue'),
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/search',
       name: 'search',
-      component: Search,
-      meta:{user:true}
+      component: () => import('../pages/Search/Search.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: () => import('../pages/Order/Order.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('../pages/Profile/Profile.vue'),
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/login',
-      name: 'login',
-      component: Login
+      name: ' login',
+      component: () => import('../pages/login/login.vue'),
     },
+    {
+      path: '/shop',
+      name: ' shop',
+      component: () => import('../pages/Shop/Shop'),
+      children: [{
+          path: '/shop/goods',
+          component: () => import('../pages/Shop/ShopGoods/ShopGoods'),
+        },
+        {
+          path: '/shop/ratings',
+          component: () => import('../pages/Shop/ShopGoods/ShopInfo'),
+        },
+        {
+          path: '/shop/info',
+          component: () => import('../pages/Shop/ShopGoods/ShopRatings'),
+        },
+        {
+          path: '',
+          redirect: '/shop/goods'
+        }
+      ]
+    }
   ]
 })

@@ -10,15 +10,20 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    // proxyTable: {
+
+    // },
     proxyTable: {
-      '/api':{
-        target:'http://localhost:3000',
-        changeOrigin:true,
-        pathRewrite:{
-          '^/api':'/'
+      '/api': {
+        target: 'http://localhost:3000', // 你要代理的域名和端口号，要加上http
+        changeOrigin: true, // 跨域
+        pathRewrite: {
+          '^/api': '/' // 这里用‘/api’代替target里面的地址，组件中调用接口时直接用api代替 比如我要调用'http://xxx.com:8080/api/NEWS/getNews.json?page=1&pageSize=10
+// '，直接写‘/api/NEWS/getNews.json?page=1&pageSize=10’即可
         }
       }
     },
+
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -51,7 +56,8 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    // assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps

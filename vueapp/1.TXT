@@ -1,0 +1,128 @@
+git  clone  '地址'     不仅仅要仓库 以及仓库里面的配置全部搞定
+
+
+git  init     只有1个仓库   里面的配置需要自己手动去配置
+
+//安装插件 解析 css  
+npm  install  stylus  stylus-loader@3.0.2  --save-dev
+
+ "stylus": "^0.54.8",
+ "stylus-loader": "^3.0.2",
+
+
+ swiper 最新版本使用  
+
+ npm install swiper vue-awesome-swiper --save
+
+
+
+
+// 核心的算法  代码 保存
+
+  getCategory(res,num) {
+         let bigArr=res.data;
+         let arr=[];
+         let containerArr=[]
+         bigArr.forEach((item,index)=>{
+           if(arr.length==0) {
+              containerArr.push(arr)
+           }
+            arr.push(item) 
+           if(arr.length==num) {
+             arr=[]
+           }
+         })
+            console.log(containerArr)
+            return  containerArr
+      }
+
+
+
+      
+          //    this.getCategorys((data)=>{
+           console.log(data)
+         return  Promise.resolve(data)
+       }).then(res=>{
+        console.log(res)
+        this.getCategoryList(res)
+       })
+
+
+
+
+   // async  getCategorys(context,callback) {
+    //     const result=    await reqCategorys()
+    //     if(result.code===0)  {
+    //         let obj={categorys:result.data}
+    //         context.commit(RECEIVE_CATEGORYS,obj)
+    //         callback&&callback(result.data)
+    //     }
+    // },
+
+
+    //vant框架引入 
+    1  安装  npm i vant -S  / cnpm i vant -S
+    2
+
+
+
+Mock.js 
+// 1 安装   cnpm  i   mockjs  --save 
+// 2 引入 
+// 3 使用
+
+
+
+
+//better-scroll  的基本使用
+
+// 1 安装   cnpm i  better-scroll  --save  
+// 2 引入    
+// 3 使用
+
+
+
+比较low  
+// this.$store.dispatch('getShopGoods')
+//      setTimeout(()=>{
+//         this.$nextTick(()=>{
+//          this._initScroll()
+//       })
+//      },3000)
+
+
+
+
+// 比较高端的代码     优化方案
+ this.$store.dispatch('getShopGoods',()=>{
+      this.$nextTick(()=>{  /* 延迟下一次dom更新 立即调用 */
+            // console.log('next')
+
+            this._initScroll()
+          })
+      })
+
+
+
+
+vue-lazyload  插件的基本使用 
+
+1  npm i vue-lazyload -S
+2
+
+
+main.js
+
+import App from './App.vue'
+import VueLazyload from 'vue-lazyload'
+ 
+Vue.use(VueLazyload)
+
+3 使用 
+
+
+ 
+
+
+js的设计模式
+ https://www.cnblogs.com/imwtr/p/9451129.html#o1

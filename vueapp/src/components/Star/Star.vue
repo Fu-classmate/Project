@@ -1,10 +1,6 @@
 <template>
   <div class="star" :class="'star-'+size">
     <span class="star-item " v-for="(item,index) in getStar" :key="index" :class="item"></span>
-    <!-- <span class="star-item on"></span>
-    <span class="star-item half"></span>
-    <span class="star-item off"></span>
-    <span class="star-item off"></span> -->
   </div>
 </template>
 
@@ -40,9 +36,9 @@
     }
   };
 </script>
-<style lang="stylus" rel="stylesheet/stylus">
+<style scoped   lang='stylus'>
 @import '../../common/stylus/mixins.styl'
-  .star
+.star
     float left
     font-size 0
     .star-item

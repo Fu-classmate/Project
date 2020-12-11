@@ -1,9 +1,11 @@
 <template>
   <div class="shop_container">
     <ul class="shop_list">
-      <li class="shop_li border-1px" v-for="(item,index) in shops" :key="index">
+      <router-link to="/shop/goods" tag="li" class="shop_li border-1px" v-for="(item,index) in shops" :key="index">
+        <!-- <li class="shop_li border-1px"  v-for="(item,index) in shops" :key="index"> -->
         <a>
           <div class="shop_left">
+            <!-- //<img   v-if='item.image_path'  class="shop_img" :src="imgBaseUrl + item.image_path"  /> -->
             <img src="./images/shop/1.jpg" alt="" class="shop_img">
           </div>
           <div class="shop_right">
@@ -16,15 +18,7 @@
             <section class="shop_rating_order">
               <section class="shop_rating_order_left">
                 <!-- 评分组件位置 -->
-                <!-- <div class="star star-24">
-                                <span class="star-item on"></span>
-                                <span class="star-item on"></span>
-                                <span class="star-item on"></span>
-                                <span class="star-item half"></span>
-                                <span class="star-item off"></span>
-                                </div> -->
                 <Star size='24' :num='item.rating'></Star>
-
                 <div class="rating_section">{{item.rating}}</div>
                 <div class="order_section">月售{{item.recent_order_num}} 单</div>
               </section>
@@ -44,11 +38,11 @@
             </section>
           </div>
         </a>
-      </li>
+        <!-- </li> -->
+      </router-link>
     </ul>
   </div>
 </template>
-
 <script>
   import Star from '../Star/Star'
   export default {
@@ -58,14 +52,14 @@
         imgBaseUrl: 'http://cangdu.org:8001/img/'
       };
     },
-    components:{
+    components: {
       Star
     }
   };
 </script>
 <style scoped   lang='stylus'>
  @import "../../common/stylus/mixins.styl"
-
+   
 .shop_container
     margin-bottom 50px
     .shop_list
@@ -167,5 +161,5 @@
                     transform scale(.9)
                     color #666
                   .segmentation
-                    color #ccc
+                    color #ccc  
 </style>

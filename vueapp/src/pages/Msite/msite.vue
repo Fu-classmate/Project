@@ -1,5 +1,5 @@
 <template>
-  <div   class="msite">
+  <div class="msite">
     <!-- 头部 -->
     <HeaderTop title="昌平区北七家宏福科技园(337省道北)">
       <template v-slot:left>
@@ -9,155 +9,126 @@
       </template>
 
       <template v-slot:right>
-        <span class="header_login">
-          <span class="header_login_text">登录|注册</span>
-        </span>
+        <router-link class="header_login" :to="userInfo._id ? '/profile'  :'/login' " tag="span">
+          <span class="header_login">
+            <span class="header_login_text" v-if='!userInfo._id'>登录|注册</span>
+            <span class="header_login_text" v-else> <i class="iconfont icon-person"></i></span>
+          </span>
+
+        </router-link>
       </template>
     </HeaderTop>
-    <!-- <div>Msite vue template</div> -->
     <!--首页轮播图导航-->
     <div class="miste-content-wrapper">
       <div class="miste-content">
-            <nav class="msite_nav">
-            <div class="swiper-container">
-                <!-- <div class="swiper-wrapper"> -->
-                <!-- 外层包裹标签 -->
-                <swiper ref="mySwiper" :options="swiperOptions" class="swiper-wrapper">
-                <!-- 第一排 -->
-                <swiper-slide class="swiper-slide"  v-for="(items,index) in getCategoryList " :key="index">
-                    <!-- <div class="swiper-slide"> -->
-                    <a :href="singleItem.link" class="link_to_food"  v-for='(singleItem,index) in items' :key="index">
-                    <div class="food_container">
-                        <img :src="imgBaseUrl+singleItem.image_url" />
-                    </div>
-                    <span>{{singleItem.title}}</span>
-                    </a>
+        <nav class="msite_nav">
+          <div class="swiper-container">
+            <!-- 外层包裹标签 -->
+            <swiper ref="mySwiper" :options="swiperOptions" class="swiper-wrapper">
+              <!-- 第一排 -->
+              <swiper-slide class="swiper-slide" v-for="(items,index) in getCategoryList " :key="index">
+                <!-- <div class="swiper-slide"> -->
+                <a :href="singleItem.link" class="link_to_food" v-for='(singleItem,index) in items' :key="index">
+                  <div class="food_container">
+                    <img :src="imgBaseUrl+singleItem.image_url" />
+                  </div>
+                  <span>{{singleItem.title}}</span>
+                </a>
 
-                </swiper-slide>
-                <!-- </div> -->
-                <!-- 第二排 -->
-
-                <!-- Add Pagination -->
-                <div class="swiper-pagination" slot="pagination">
-                </div>
-                </swiper>
-
-            </div>
-            </nav>
-            <div class="msite_shop_list">
-                <div class="shop_header">
-                    <i class="iconfont icon-xuanxiang"></i>
-                    <span class="shop_header_title">附近商家</span>
-                </div>
-                <!-- 被抽了  抽到了shipList去了 -->
-                <ShopList :shops='shops'></ShopList>
-            </div>
+              </swiper-slide>
+              <!-- 第二排 -->
+              <div class="swiper-pagination" slot="pagination">
+              </div>
+            </swiper>
+          </div>
+        </nav>
+        <div class="msite_shop_list">
+          <div class="shop_header">
+            <i class="iconfont icon-xuanxiang"></i>
+            <span class="shop_header_title">附近商家</span>
+          </div>
+          <!-- 被抽了  抽到了shipList去了 -->
+          <ShopList :shops='shops'></ShopList>
+        </div>
       </div>
     </div>
-
-
-
-
   </div>
 </template>
 <script>
-import Vue from "vue";
-import VueAwesomeSwiper from "vue-awesome-swiper";
+  import Vue from "vue";
+  import VueAwesomeSwiper from "vue-awesome-swiper";
+  import "swiper/swiper-bundle.css";
 
-// import style (>= Swiper 6.x)
-import "swiper/swiper-bundle.css";
+  Vue.use(VueAwesomeSwiper /* { default options with global component } */ );
 
+  import HeaderTop from "../../components/HeaderTop/HeaderTop";
+  import ShopList from "../../components/ShopList/ShopList";
+  import {
+    reqCategorys,
+    reqShops
+  } from "../../api/index";
 
-Vue.use(VueAwesomeSwiper /* { default options with global component } */);
+  // mapActions  mapMutations  写在methods里面
+  import {
+    mapState,
+    mapActions,
+    mapMutations
+  } from 'vuex'
 
-import HeaderTop from "../../components/HeaderTop/HeaderTop";
-
-
-
-import ShopList from "../../components/ShopList/ShopList";
-
-
-import { reqCategorys,reqShops   } from "../../api/index";
-
-
-//第一步  mapState  mapGetters  写在computed里面
-
-// mapActions  mapMutations  写在methods里面
-import {mapState,mapActions, mapMutations}  from 'vuex'
-
-
-
-
-export default {
-     data() {
+  export default {
+    data() {
       return {
         swiperOptions: {
-           scrollbar: '.swiper-scrollbar',
-          pagination:{
-          el:'.swiper-pagination',
-          clickable:true,
-        },
+          scrollbar: '.swiper-scrollbar',
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
 
         },
-        // bannerList:[]
         imgBaseUrl: 'https://fuss10.elemecdn.com'
       }
     },
-
     computed: {
       //映射state的数据
+      ...mapState(['address', 'categorys', 'shops', 'userInfo']),
+      getCategoryList() {
+        let bigArr = this.categorys;
+        let arr = [];
+        let containerArr = []
+        bigArr.forEach((item, index) => {
+          if (arr.length == 0) {
+            containerArr.push(arr)
+          }
+          arr.push(item)
+          if (arr.length == 8) arr = []
 
-     ...mapState(['address','categorys','shops']),
-
-     getCategoryList() {
-
-         let bigArr=this.categorys;
-
-         let arr=[];
-         let containerArr=[]
-         bigArr.forEach((item,index)=>{
-           if(arr.length==0) {
-              containerArr.push(arr)
-           }
-            arr.push(item)
-           if(arr.length==8) {
-             arr=[]
-           }
-         })
-            console.log(containerArr)
-
-            return  containerArr
-
+        })
+        return containerArr
       },
       swiper() {
         return this.$refs.mySwiper.$swiper
       }
     },
     methods: {
-       //映射actions里面的方法
-      ...mapActions(['getAddress','getCategorys','getShops'])
-
+      //映射actions里面的方法
+      ...mapActions(['getAddress', 'getCategorys', 'getShops'])
     },
-  components: {
-    HeaderTop,
-    ShopList
-  },
-
-   async mounted() {
-      // console.log('Current Swiper instance object', this.swiper)
+    components: {
+      HeaderTop,
+      ShopList
+    },
+    async mounted() {
       this.swiper.slideTo(3, 1000, false)
 
       // 请求数据
       // 触发dispatch方法  actions 间接去更改state数据
-      // this.$store.dispatch('getAddress')
-      // this.$store.dispatch('getCategorys')
-      // this.$store.dispatch('getShops')
       //需要执行映射过来的方法
-        this.getAddress()
-        this.getCategorys()
-        this.getShops()
+      this.getAddress()
+      this.getCategorys()
+      this.getShops()
     },
-};
+  };
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl"
@@ -182,7 +153,6 @@ export default {
             .swiper-slide
               // &.swiper-slide-active
               //    background #02a774
-
               display flex
               justify-content center
               align-items flex-start
@@ -222,16 +192,9 @@ export default {
             color #999
             font-size 14px
             line-height 20px
-
-
 </style>
-
-
 <style>
 /* 新版swiper 存在的bug  */
-
-
-
 /* //5  */
   .swiper-container  /deep/  .swiper-pagination-bullet-active {
  background: #02a774;

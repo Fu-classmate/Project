@@ -1,88 +1,143 @@
 <template>
-<section class="loginContainer">
-      <div class="loginInner">
-        <div class="login_header">
-          <h2 class="login_logo">硅谷外卖</h2>
-          <div class="login_header_title">
-            <a href="javascript:;" class="on">短信登录</a>
-            <a href="javascript:;">密码登录</a>
-          </div>
+  <section class="loginContainer">
+    <div class="loginInner">
+      <div class="login_header">
+        <h2 class="login_logo">硅谷外卖</h2>
+        <div class="login_header_title">
+          <a href="javascript:;" :class="{on:logWay}" @click="logWay=true">短信登录</a>
+          <a href="javascript:;" :class="{on:!logWay}" @click="logWay=false">密码登录</a>
         </div>
-        <div class="login_content">
-          <form>
-            <div class="on">
+      </div>
+      <div class="login_content">
+        <form>
+          <!--    手机号登录 -->
+          <div :class="{on:logWay}">
+            <section class="login_message">
+              <input type="tel" maxlength="11" placeholder="手机号" v-model="phone">
+              <!-- rightPhone 为true 表示号码正确  那么   disabled应为为false    -->
+              <button :disabled="!rightPhone" class="get_verification" :class="{right_phone:rightPhone}" @click.prevent="getCode">
+                <!-- 获取验证码 -->
+                {{computeTime>0?'还剩'+computeTime+'秒':'获取验证码'}}
+
+              </button>
+            </section>
+            <section class="login_verification">
+              <input type="tel" maxlength="8" placeholder="验证码" v-model="code">
+            </section>
+            <section class="login_hint">
+              温馨提示：未注册硅谷外卖帐号的手机号，登录时将自动注册，且代表已同意
+              <a href="javascript:;">《用户服务协议》</a>
+            </section>
+          </div>
+          <!-- 密码登录 -->
+          <div :class="{on:!logWay}">
+            <section>
               <section class="login_message">
-                <input type="tel" maxlength="11" placeholder="手机号">
-                <button disabled="disabled" class="get_verification">获取验证码</button>
+                <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名" v-model="name">
               </section>
               <section class="login_verification">
-                <input type="tel" maxlength="8" placeholder="验证码">
+                <input :type="showPassword?'text':'password'" maxlength="8" placeholder="密码" v-model="pwd">
+                <div class="switch_button" @click="showPassword=!showPassword" :class="showPassword?'on':'off'">
+                  <div class="switch_circle" :class="showPassword?'myOn':''"></div>
+                  <span class="switch_text" v-show='!showPassword'>...</span>
+                </div>
               </section>
-              <section class="login_hint">
-                温馨提示：未注册硅谷外卖帐号的手机号，登录时将自动注册，且代表已同意
-                <a href="javascript:;">《用户服务协议》</a>
+              <section class="login_message">
+                <input type="text" maxlength="11" placeholder="验证码" v-model="captcha">
+                <img class="get_verification" src="http://localhost:3000/captcha" alt="captcha" ref='myImg' @click="getCaptcha">
               </section>
-            </div>
-            <div>
-              <section>
-                <section class="login_message">
-                  <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名">
-                </section>
-                <section class="login_verification">
-                  <input type="tel" maxlength="8" placeholder="密码">
-                  <div class="switch_button off">
-                    <div class="switch_circle"></div>
-                    <span class="switch_text">...</span>
-                  </div>
-                </section>
-                <section class="login_message">
-                  <input type="text" maxlength="11" placeholder="验证码">
-                  <img class="get_verification" src="./images/captcha.svg" alt="captcha">
-                </section>
-              </section>
-            </div>
-            <button class="login_submit">登录</button>
-          </form>
-          <a href="javascript:;" class="about_us">关于我们</a>
-        </div>
-        <!-- <a href="javascript:" class="go_back"  @click='$router.go(-1)'>
-          <i class="iconfont icon-jiantou2"></i>
-        </a> -->
+            </section>
+          </div>
+          <button class="login_submit" @click.prevent='login'>登录</button>
+        </form>
+        <a href="javascript:;" class="about_us">关于我们</a>
       </div>
-    </section>
+    </div>
+  </section>
 </template>
 
 <script>
-export default {
-    props: {
+  import {reqSendCode,reqSingleCode,reqPwdLogin,reqSmsLogin} from '../../api/index'
+  import Vue from 'vue'
+  import {Toast} from 'vant';
+  Vue.use(Toast);
 
-    },
+  export default {
     data() {
-        return {
-
-        };
+      return {
+        logWay: true,
+        computeTime: 0,
+        showPassword: false, // 是否显示密码
+        phone: '', // 手机号
+        code: '', // 短信验证码
+        name: '', // 用户名
+        pwd: '', // 密码
+        captcha: '', // 图形验证码
+        isFlag: true, // 手机号码    false 用户+密码
+        userInfo: ''
+      };
     },
     computed: {
-
-    },
-    created() {
-
-    },
-    mounted() {
-
-    },
-    watch: {
-
+      rightPhone() {
+        return /^1\d{10}$/.test(this.phone)
+      }
     },
     methods: {
+      //获取验证码
+      async getCode() {
+        if (this.computeTime == 0) {
+          this.computeTime = 20;
+          this.timerId = setInterval(() => {
+            this.computeTime--;
+            if (this.computeTime == 0) {
+              clearInterval(this.timerId)
+            }
+          }, 1000)
+        }
+        //获取手机号验证码
+        let res = await reqSendCode(this.phone)
 
-    },
-    components: {
+        // 显示提示框
+        if (res.code === 0) Toast.success('验证码获取成功');
+      },
 
-    },
-};
+      //获取条形验证码
+      getCaptcha() {
+
+        //不要服务器缓存 这样才能实现每一次验证码不一样
+        this.$refs.myImg.src = 'http://localhost:3000/captcha?time=' + new Date()
+      },
+      async login() {
+        if (this.logWay) {
+
+          //第一种是手机号码+手机验证码
+          let {phone,code} = this
+          let smsRes = await reqSmsLogin({ phone,code})
+
+          //  this.$store. getUserInfo(smsRes)
+          this.userInfo = smsRes.data
+        } else {
+
+          //第二种是用户名+密码+验证码
+          let {name,pwd,captcha} = this
+          let nameRes = await reqPwdLogin({name,pwd,captcha})
+          alert('验证码不正确')
+          if (nameRes.code == 0) {
+            //  this.$store. getUserInfo(nameRes)
+            this.userInfo = nameRes.data
+            //存储到vuex
+            this.$store.dispatch('recordUserInfo', {
+              userInfo: this.userInfo
+            })
+            // this.$router.back()
+            this.$router.replace('/profile')
+            // this.$router.push('/profile')
+          }
+        }
+      }
+    }
+  };
 </script>
-
 <style scoped  lang='stylus' >
 @import "../../common/stylus/mixins.styl"
  .loginContainer
@@ -144,6 +199,8 @@ export default {
                   color #ccc
                   font-size 14px
                   background transparent
+                  &.right_phone
+                     color black
               .login_verification
                 position relative
                 margin-top 16px
@@ -169,6 +226,7 @@ export default {
                     .switch_text
                       float right
                       color #ddd
+
                   &.on
                     background #02a774
                   >.switch_circle
@@ -183,6 +241,9 @@ export default {
                     background #fff
                     box-shadow 0 2px 4px 0 rgba(0,0,0,.1)
                     transition transform .3s
+                    &.myOn
+                      transform translateX(27px)
+
               .login_hint
                 margin-top 12px
                 color #999
