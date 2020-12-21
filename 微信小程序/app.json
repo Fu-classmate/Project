@@ -1,9 +1,9 @@
 {
-  "pages":[
+  "pages": [ 
     "pages/index/index",
-    "pages/category/index",
+    "pages/category/index", 
     "pages/goods_list/index",
-    "pages/goods_detail/index",
+    "pages/goods_detail/index", 
     "pages/cart/index",
     "pages/collect/index",
     "pages/order/index",
@@ -14,11 +14,11 @@
     "pages/auth/index",
     "pages/pay/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#eb4450",
-    "navigationBarTitleText": "myapp",
-    "navigationBarTextStyle":"white"
+    "navigationBarTitleText": "app",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#999",
@@ -38,13 +38,15 @@
         "text": "分类",
         "iconPath": "icons/category.png",
         "selectedIconPath": "icons/category-o.png"
-      },
+      }
+      ,
       {
-        "pagePath":  "pages/cart/index",
+        "pagePath": "pages/cart/index",
         "text": "购物车",
         "iconPath": "icons/cart.png",
         "selectedIconPath": "icons/cart-o.png"
-      },
+      }
+      ,
       {
         "pagePath": "pages/user/index",
         "text": "我的",
@@ -52,9 +54,20 @@
         "selectedIconPath": "icons/my-o.png"
       }
     ]
-  }, 
+  },
   
     
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
+
+
+
+
+
+
+
+
+
+
+
+

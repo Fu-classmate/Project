@@ -16,9 +16,7 @@ App({
   //options(path,query,isEntryPage)
   onPageNotFound: function(options) {
 
-  },
-  globalData: {
-    
   }
+ 
 });
   
